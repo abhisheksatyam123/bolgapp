@@ -1,4 +1,4 @@
-function App() {
+export function App() {
   return (
     <div>
       Hello world!
@@ -6,4 +6,15 @@ function App() {
   );
 }
 
+export function Temp2() {
+  return (
+    <div>
+      A div print from temp 2
+    </div>
+  );
+}
+
+
+
 export default App;
+Temp2;
