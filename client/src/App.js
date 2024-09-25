@@ -11,6 +11,7 @@ import Single from "./pages/Single"
 import Write from "./pages/Write"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import "./style.scss"
 
 
 const Layout = () =>{  // a outlet functio which a parent can paas to its childrens. 
@@ -55,12 +56,14 @@ const router = createBrowserRouter([
 ]);
 
 
+  // creating div  for cosmetic and containers and className should be camel case
 
 export function App() {
   return (
-    <div>
-      Hello world!
-      <RouterProvider router={router}/>
+    <div className="app">       
+      <div className="container">
+        <RouterProvider router={router}/>
+      </div>
     </div>
   );
 }
