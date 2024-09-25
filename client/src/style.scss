@@ -1,7 +1,15 @@
 $lightgreen : #b9e7e7;
 
 .app{
+    display:flex;
+    justify-content: center;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
     .container{
+        width: 1025px;  // no space between number and px
         .auth {
             display: flex;
             flex-direction: column; /* Fixed spelling */
@@ -22,7 +30,7 @@ $lightgreen : #b9e7e7;
                 background-color: white;
                 width: 200px;
                 margin-bottom : 10px;
-                gap: 20px;
+                gap:10px;
 
                 input {
                     padding: 10px;
@@ -37,7 +45,6 @@ $lightgreen : #b9e7e7;
                     cursor: pointer;
                     color: white;
                 }
-
                 p {
                     font-size: 12px;
                     color: red;
@@ -47,9 +54,66 @@ $lightgreen : #b9e7e7;
                 span {
                     font-size: 12px;
                     text-align: center;
+                    text-align: center;
                 }
             }
         }
+        //navbar
+        .navbar{
+            .container{   // its Inhereting alredy defined container values
+                padding: 10px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                align-items: center;
+                .logo{
+                    img {
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                    }
 
+                }
+                .links{
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    gap:10px;
+
+                }
+                h6{
+                    font-size: 16px;
+                    font-weight:300;
+                }
+
+                span{
+                    cursor:pointer;
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .write{
+                    background-color: $lightgreen;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 300;
+                    border: 1px solid white;
+
+                    &:hover {
+                        color: teal;
+                        background-color: white;
+                        border: 1px solid teal;
+                    }
+
+                }
+            }
+        }
     }
 }
