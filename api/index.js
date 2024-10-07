@@ -1,9 +1,20 @@
-import express form "express"
+import express from "express";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
+import postRoutes from "./routes/posts.js";
 
-const app=express()
 
-app.use(exress.json())
+const app=express();
 
-app.listem(8800,()=>{
-	console.log("connected to port 8800")
+app.use(express.json());
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
+
+app.get("/test",(req,res)=>{
+  res.json("it works!")
 })
+
+app.listen(8800, () => {
+  console.log("Connected! to port 8800");
+});
