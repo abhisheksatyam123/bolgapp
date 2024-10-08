@@ -92,6 +92,10 @@ VALUES
    SELECT * FROM users;
    ```
 
+change port to port = 3306 in :
 
+```
+vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
 
 
