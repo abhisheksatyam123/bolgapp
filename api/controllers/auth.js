@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 export const register = (req,res) => {
     console.log("Received registration request:", req.body);
-    const q = "SELECT * FROM users WHERE email = ? username =?"
+    const q = "SELECT * FROM users WHERE email = ? and username =?"
     db.query(q,[req.body.email,req.body.name],(err,data)=>{
        if (err) {
             console.log("Error while checking if user exists:", err); // Log the error
@@ -15,7 +15,7 @@ export const register = (req,res) => {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password,salt);
 
-        const q = "INSERT INTO users(`username`,`email`,`password`) VALUES (?)"
+        const q = "INSERT INTO users(`username`,`email`,`image`,`password`) VALUES (?)"
         const values = [
             req.body.username,
             req.body.email,
